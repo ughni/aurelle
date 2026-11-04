@@ -4,10 +4,13 @@
  */
 export type SiteImage = { src: string; alt: string };
 
-const img = (name: string, alt: string): SiteImage => ({ src: `/images/${name}.svg`, alt });
+const img = (name: string, alt: string, ext: string = "svg"): SiteImage => ({ 
+  src: `/images/${name}.${ext}`, 
+  alt 
+});
 
 export const images = {
-  hero: img("hero", "Potret perawatan kulit dengan pencahayaan natural"),
+  hero: img("foto1", "Potret perawatan kulit dengan pencahayaan natural","jpg"),
   heroDetail: img("hero-detail", "Deretan produk skincare di atas rak marmer"),
   about: img("about", "Area tunggu klinik dengan sofa dan lengkungan arsitektural"),
   aboutDetail: img("about-detail", "Tekstur kulit yang lembut dalam nuansa champagne"),
